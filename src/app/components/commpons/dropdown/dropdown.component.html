@@ -1,0 +1,9 @@
+<h4>{{title}}</h4>
+<mat-form-field appearance="fill">
+  <mat-label>{{text}}</mat-label>
+  <mat-select [(ngModel)]="selectedValue" name="item">
+    <mat-option (click)="selectValue()" *ngFor="let item of items" [value]="item.value">
+      {{getText(item)}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
