@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row"><h1 class="mb-2 text-center">MOVIMIENTOS</h1></div>
+    
+<div class="row">
+    <form [formGroup]="formData">
+    <div class="col-12 content-form">
+        <div class="row text-center">
+            <div class="col-sm-6 col-xs-12 col-md-3  form-group">
+                <app-dropdown [items]="itemsListFamily" formControlName="selectTypeFamily" [title]="'TIPO DE FAMILIA A CONSULTAR'" [text]="typeFamily" (selectedItem)="onChangeSelectTypeFamily($event)"></app-dropdown>
+            </div>
+            <div class="col-sm-6 col-xs-12 col-md-3 form-group">
+                <app-dropdown [items]="itemsListMetrics" formControlName="selectTypeMetric" [title]="'METRICA'" [text]="typeMetric"  (selectedItem)="onChangeSelectTypeMetric($event)"></app-dropdown>
+            </div>
+            <div class="col-sm-6 col-xs-12 col-md-3 form-group">
+                <app-dropdown [items]="itemsListYears" formControlName="selectTypeYear" [title]="'AÑO'" [text]="typeYear"  (selectedItem)="onChangeSelectTypeYear($event)"></app-dropdown>
+        </div>
+        <div class="col-sm-6 col-xs-12 col-md-3 form-group text-center d-flex align-items-center justify-content-center">
+            <button mat-raised-button color="primary" (click)="filter()">Filtrar</button>
+    </div>
+        
+        </div>
+    </div>
+</form>
+</div>
+<div class="row" *ngIf="listData !== {}">
+    <app-table [newlistData]="listData"></app-table>
+</div>
+
+</div>
+
+
+
+  
+
+  
